@@ -1,0 +1,255 @@
+﻿@model TorontoRoonRentals.ViewModels.RoomVM
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-controller="Room" asp-action="RoomEdit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <h2 class="pt-5 pb-5">What kind of place are you listing?</h2>
+            <div class="form-group pt-2 pb-2">
+                <h5 class="text-secondary">Enter a title for your room</h5>
+                <input asp-for="Room.Title" class="form-control" placeholder="Enter a title" />
+                <span asp-validation-for="Room.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group pt-2 pb-2">
+                <h5 class="text-secondary">Where is the location?</h5>
+                <div class=" ">
+                    <input asp-for="Room.Address" class="form-control" id="SearchAddress" />
+                    <span asp-validation-for="Room.Address" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group pt-2 pb-2">
+                <h5 class="text-secondary">Enter a price of your room</h5>
+                <input asp-for="Room.Price" class="form-control w-25" placeholder="Enter a price" />
+                <span asp-validation-for="Room.Price" class="text-danger"></span>
+            </div>
+
+            <div class="form-group" style="display:none;">
+                <input asp-for="Room.Lat" class="form-control w-25" id="Lat" />
+                <span asp-validation-for="Room.Lat" class="text-danger"></span>
+            </div>
+
+            <div class="form-group" style="display:none;">
+                <input asp-for="Room.Lng" class="form-control w-25" id="Lng" />
+                <span asp-validation-for="Room.Lng" class="text-danger"></span>
+            </div>
+
+            <div class="form-group pt-2 pb-2">
+                <h5 class="text-secondary">Enter a move-in date</h5>
+                <div class=" ">
+                    <input asp-for="Room.Moveindate" class="form-control w-25" placeholder="2019-01-01" />
+                    <span asp-validation-for="Room.Moveindate" class="text-danger"></span>
+                </div>
+            </div>
+            @*<div class="form-group">
+                <h2 class="pt-5 pb-5 text-body text">Add photos to your listing</h2>
+                <p class="text-secondary font-italic">Photos help guests imagine staying in your place. You can start with one and add more after you publish.</p>
+                <div class="col-md-10">
+                    <input asp-for="Images" type="file" multiple="multiple" />
+                </div>
+            </div>*@
+
+            <hr />
+
+            <div class="form-group pt-2 pb-2">
+                <h5 class="text-secondary">How many bathrooms you have?</h5>
+                <div class="w-25">
+                    <input asp-for="Room.Bathrooms" class="form-control" />
+                    <span asp-validation-for="Room.Bathrooms" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group pt-2 pb-2">
+                <h5 class="text-secondary">Is parking allowed?</h5>
+                <input asp-for="Room.IsParking" class="form-control" />
+                <span asp-validation-for="Room.IsParking" class="text-danger"></span>
+            </div>
+
+            <div class="form-group pt-2 pb-2">
+                <h5 class="text-secondary">Is a pet allowed?</h5>
+                <input asp-for="Room.IsPetFriendly" class="form-control" />
+                <span asp-validation-for="Room.IsPetFriendly" class="text-danger"></span>
+            </div>
+
+            <div class="form-group pt-2 pb-2">
+                <h5 class="text-secondary">Is smoking allowed?</h5>
+                <input asp-for="Room.IsSmoking" class="form-control" />
+                <span asp-validation-for="Room.IsSmoking" class="text-danger"></span>
+            </div>
+
+            <hr />
+
+            <h2 class="pt-5 pb-5">What utilities do you offer?</h2>
+
+            <div class="form-group pt-2 pb-2">
+                <label> <input asp-for="Utilities.HasHydro" class="form-check-input" type="checkbox" /> Hydro </label>
+                <span asp-validation-for="Utilities.HasHydro" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    <label> <input asp-for="Utilities.HasAirconditioning" class="form-control" /> Air conditioning </label>
+                    <span asp-validation-for="Utilities.HasAirconditioning" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    <label> <input asp-for="Utilities.HasWater" class="form-check-input" type="checkbox" /> Water </label>
+                    <span asp-validation-for="Utilities.HasWater" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    <label> <input asp-for="Utilities.HasHeat" class="form-check-input" type="checkbox" /> Heat </label>
+                    <span asp-validation-for="Utilities.HasHeat" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    <label> <input asp-for="Utilities.HasWifi" class="form-check-input" type="checkbox" /> Wifi </label>
+                    <span asp-validation-for="Utilities.HasWifi" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    <label> <input asp-for="Utilities.HasTv" class="form-check-input" type="checkbox" /> TV </label>
+                    <span asp-validation-for="Utilities.HasTv" class="text-danger"></span>
+                </div>
+            </div>
+
+            <hr />
+            <h2 class="pt-5 pb-5">What appliances do you offer?</h2>
+
+            <div class="form-group pt-2 pb-2">
+                <div class="col-md-10">
+                    <label> <input asp-for="Appliances.HasLanduary" class="form-check-input" type="checkbox" /> Landuary </label>
+                    <span asp-validation-for="Appliances.HasLanduary" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    <label> <input asp-for="Appliances.HasDryer" class="form-check-input" type="checkbox" /> Dryer </label>
+                    <span asp-validation-for="Appliances.HasDryer" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    <label> <input asp-for="Appliances.HasDishwasher" class="form-check-input" type="checkbox" /> Dish washer</label>
+                    <span asp-validation-for="Appliances.HasDishwasher" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    <label> <input asp-for="Appliances.HasFridge" class="form-check-input" type="checkbox" /> Fridge </label>
+                    <span asp-validation-for="Appliances.HasFridge" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    <label> <input asp-for="Appliances.HasMicrowave" class="form-check-input" type="checkbox" /> Microwave </label>
+                    <span asp-validation-for="Appliances.HasMicrowave" class="text-danger"></span>
+                </div>
+            </div>
+
+            <hr />
+            <h2 class="pt-5 pb-5">Describe your place</h2>
+            <div class="form-group">
+                <div>
+                    <p>Write a quick summary of your place. You can highlight what’s special about your space, the neighborhood, and how you’ll interact with guests.</p>
+                </div>
+                <div class="col-md-10">
+                    <textarea asp-for="Description.MainDescription" class="form-control" rows="5" placeholder="Describe the decor, light, what's nearby, ect..."></textarea>
+                    <span asp-validation-for="Description.MainDescription" class="text-danger"></span>
+                </div>
+            </div>
+            <hr />
+            <h2 class="pt-5 pb-5">Want to add more info? (optional)</h2>
+            <h5 class="text-body">Use the additional fields below to share more details.</h5>
+
+            <div class="form-group">
+                <div>
+                    <h3>Your space</h3>
+                    <p>Add other details that can help set guests’ expectations for their stay.</p>
+                </div>
+                <div class="col-md-10">
+                    <textarea asp-for="Description.Space" class="form-control" rows="3"></textarea>
+                    <span asp-validation-for="Description.Space" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div>
+                    <h3>Your availability</h3>
+                    <p>Let guests know how available you’ll be during their stay. For your safety, don’t share your phone number or email until you have a confirmed reservation.</p>
+                </div>
+                <div class="col-md-10">
+                    <textarea asp-for="Description.Availability" class="form-control" rows="3"></textarea>
+                    <span asp-validation-for="Description.Availability" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div>
+                    <h3>Your neighborhood</h3>
+                    <p>
+                        Share what makes your neighborhood special, like a favorite coffee shop, park, or a unique landmark.
+                    </p>
+                </div>
+                <div class="col-md-10">
+                    <textarea asp-for="Description.Neighborhood" class="form-control" rows="3"></textarea>
+                    <span asp-validation-for="Description.Neighborhood" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div>
+                    <h3>Transportation</h3>
+                    <p>Add info about getting around your city or neighborhood, like nearby public transportation, driving tips, or good walking routes.</p>
+                </div>
+                <div class="col-md-10">
+                    <textarea asp-for="Description.Transportation" class="form-control" rows="3"></textarea>
+                    <span asp-validation-for="Description.Transportation" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<script>
+        var autocomplete;
+        var place;
+
+        function activatePlaceSearch() {
+            var input = document.getElementById('SearchAddress');
+            autocomplete = new google.maps.places.Autocomplete(input);
+
+            autocomplete.addListener('place_changed', geolocate);
+
+        }
+
+        function geolocate() {
+            place = autocomplete.getPlace();
+            var geoLat = place.geometry.location.lat();
+            var geoLng = place.geometry.location.lng();
+            console.log(geoLat, geoLng);
+            var LatBox = document.getElementById('Lat');
+            var LngBox = document.getElementById('Lng');
+            LatBox.value = geoLat;
+            LngBox.value = geoLng;
+
+        }
+
+</script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVqo5gKGiKbhNstQThOhhQQlvkDQ-ds2k&libraries=places&callback=activatePlaceSearch"></script>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

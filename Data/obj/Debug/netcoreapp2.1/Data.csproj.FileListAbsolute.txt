@@ -1,0 +1,5 @@
+D:\Programming\CSharp\Projects\TorontoRoonRentals\Data\bin\Debug\netcoreapp2.1\Data.deps.json
+D:\Programming\CSharp\Projects\TorontoRoonRentals\Data\bin\Debug\netcoreapp2.1\Data.dll
+D:\Programming\CSharp\Projects\TorontoRoonRentals\Data\obj\Debug\netcoreapp2.1\Data.csproj.CoreCompileInputs.cache
+D:\Programming\CSharp\Projects\TorontoRoonRentals\Data\obj\Debug\netcoreapp2.1\Data.AssemblyInfoInputs.cache
+D:\Programming\CSharp\Projects\TorontoRoonRentals\Data\obj\Debug\netcoreapp2.1\Data.AssemblyInfo.cs

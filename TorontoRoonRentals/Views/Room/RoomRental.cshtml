@@ -1,0 +1,26 @@
+﻿<style>
+
+    .container-fluid {
+        padding: 0px;
+        margin: 0px;
+    }
+</style>
+
+<div class="container-fluid">
+    <div id="root"></div>
+</div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVqo5gKGiKbhNstQThOhhQQlvkDQ-ds2k">
+    </script>
+
+    <script crossorigin="anonymous" src="~/react/dist/bundle.js"></script>
+
+<script>
+    $(".RoomType").click(function () {
+    $(".RoomType").removeClass('btn-primary');
+    $(".RoomType").addClass('btn-outline-primary ');
+    $(this).toggleClass('btn-outline-primary btn-primary');
+        });
+</script>
